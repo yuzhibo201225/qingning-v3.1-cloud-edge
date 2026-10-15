@@ -1,0 +1,14 @@
+{
+  "vm_monthly_cny": null,
+  "vm_sustainable_rps": null,
+  "target_utilisation": 0.60,
+  "tenants": 1,
+  "orders_per_day": null,
+  "requests_per_order": null,
+  "storage_start_gb": null,
+  "gb_added_per_1000_orders": null,
+  "storage_cny_per_gb_month": null,
+  "monitoring_monthly_cny": null,
+  "ops_monthly_cny": null,
+  "variable_cny_per_1000_requests": null
+}

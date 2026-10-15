@@ -1,0 +1,98 @@
+{
+  "measurement_type": "REAL HTTP requests to isolated Docker cloud container on this host",
+  "NOT": "Not production traffic, not edge ARM64 latency, not multi-tenant or autoscaling result",
+  "timestamp_utc": "2026-10-15T06:41:15.523287+00:00",
+  "hostname": "iZ2zeikhpeshcp0clg65fqZ",
+  "os": "Linux-5.15.0-142-generic-x86_64-with-glibc2.35",
+  "cpu_count": 2,
+  "image": "pi-cafe-classroom-cloud:local",
+  "image_platform": "linux/amd64",
+  "app_dir": "/root/pi-cafe-classroom/cloud",
+  "observed_version": "3.1-ai",
+  "endpoint": "localhost isolated cloud sync ingest",
+  "requests_per_level": 250,
+  "levels": [
+    1,
+    5,
+    10,
+    25,
+    50
+  ],
+  "results": [
+    {
+      "concurrency": 1,
+      "requests": 250,
+      "success": 250,
+      "errors": 0,
+      "error_rate_pct": 0.0,
+      "throughput_rps": 216.365,
+      "elapsed_s": 1.155,
+      "p50_ms": 4.287,
+      "p95_ms": 5.536,
+      "p99_ms": 6.931
+    },
+    {
+      "concurrency": 5,
+      "requests": 250,
+      "success": 250,
+      "errors": 0,
+      "error_rate_pct": 0.0,
+      "throughput_rps": 374.342,
+      "elapsed_s": 0.668,
+      "p50_ms": 7.446,
+      "p95_ms": 42.84,
+      "p99_ms": 86.195
+    },
+    {
+      "concurrency": 10,
+      "requests": 250,
+      "success": 250,
+      "errors": 0,
+      "error_rate_pct": 0.0,
+      "throughput_rps": 380.661,
+      "elapsed_s": 0.657,
+      "p50_ms": 19.52,
+      "p95_ms": 45.979,
+      "p99_ms": 138.669
+    },
+    {
+      "concurrency": 25,
+      "requests": 250,
+      "success": 250,
+      "errors": 0,
+      "error_rate_pct": 0.0,
+      "throughput_rps": 373.639,
+      "elapsed_s": 0.669,
+      "p50_ms": 57.964,
+      "p95_ms": 83.917,
+      "p99_ms": 140.993
+    },
+    {
+      "concurrency": 50,
+      "requests": 250,
+      "success": 250,
+      "errors": 0,
+      "error_rate_pct": 0.0,
+      "throughput_rps": 335.481,
+      "elapsed_s": 0.745,
+      "p50_ms": 121.909,
+      "p95_ms": 145.073,
+      "p99_ms": 233.821
+    }
+  ],
+  "failure": {
+    "requests_during_window": 60,
+    "failed_before_retry": 32,
+    "failure_rate_pct": 53.33,
+    "forced_outage_s": 2.002,
+    "restart_to_health_s": 0.983,
+    "retry_attempts": 32,
+    "retry_success": 32,
+    "fault_target": "isolated single cloud container; live service untouched",
+    "outcome": "Single instance unavailable during stop; client retry is required"
+  },
+  "db_total_orders": 1310,
+  "duplicate_primary_keys": 0,
+  "missing_failure_window_orders_after_retries": 0,
+  "interpretation": "Autoscaling NOT implemented: single-instance baseline; scale-response target unmet/not tested.\nLoad generator shares host with server; server uses SQLite single-writer.\nSingle-instance stop produces downtime; no automatic failover.\nRetry behavior here is load-client retry, not a measurement of Raspberry Pi sync recovery."
+}

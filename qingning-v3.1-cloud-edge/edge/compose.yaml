@@ -1,0 +1,26 @@
+name: pi-cafe-classroom
+x-shared: &shared
+  image: pi-cafe-classroom:local
+  restart: unless-stopped
+  env_file: .env
+  volumes:
+    - ./data:/data
+  mem_limit: 240m
+services:
+  cafe-web:
+    <<: *shared
+    build: .
+    ports:
+      - "18080:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health',timeout=2)"]
+      interval: 30s
+      timeout: 4s
+      retries: 3
+  cafe-sync:
+    <<: *shared
+    command: ["python", "sync_agent.py"]
+    depends_on:
+      cafe-web:
+        condition: service_started
+    mem_limit: 110m

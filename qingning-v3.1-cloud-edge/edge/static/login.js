@@ -1,0 +1,1 @@
+async function submit(){try{await api('/api/login',{method:'POST',body:JSON.stringify({pin:$('#pin').value})});const next=new URLSearchParams(location.search).get('next');location.href=next&&/^\/(cashier|kitchen|dashboard|manage|qr)$/.test(next)?next:'/cashier'}catch(e){toast(e.message)}}$('#loginBtn').onclick=submit;$('#pin').onkeydown=e=>{if(e.key==='Enter')submit()};

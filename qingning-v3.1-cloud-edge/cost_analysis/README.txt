@@ -1,0 +1,1 @@
+Modelled unit economics only. Inputs in scenario_assumptions_ILLUSTRATIVE.json are ASSUMPTIONS rather than Alibaba invoice. Reproduce with 03_Source_Repository/platform_eval/cost_model.py. Avoid presenting any total as a real bill.

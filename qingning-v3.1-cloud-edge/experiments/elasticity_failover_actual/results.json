@@ -1,0 +1,260 @@
+{
+  "label": "ACTUAL isolated application-level replica experiment; NOT production auto-scaling, VM auto-scaling, zone HA or deployment",
+  "timestamp_utc": "2026-10-15T07:49:05.236+00:00",
+  "image": "pi-cafe-classroom-cloud:local",
+  "platform": "linux/amd64",
+  "hostname": "iZ2zeikhpeshcp0clg65fqZ",
+  "host_mem_available_mib_at_end": 348,
+  "proxy_bind": "127.0.0.1:15110",
+  "backends": "127.0.0.1:15121 and +1",
+  "autoscaler_trigger_rps": 11,
+  "autoscaler_idle_scale_down_s": 4.0,
+  "phases": {
+    "baseline": {
+      "requests": 9,
+      "success": 9,
+      "failures": 0,
+      "success_rate_pct": 100.0,
+      "p95_success_ms": 10.872,
+      "p99_success_ms": 11.157
+    },
+    "surge": {
+      "requests": 240,
+      "success": 240,
+      "failures": 0,
+      "success_rate_pct": 100.0,
+      "p95_success_ms": 8.273,
+      "p99_success_ms": 12.127
+    },
+    "failure_under_load": {
+      "requests": 175,
+      "success": 175,
+      "failures": 0,
+      "success_rate_pct": 100.0,
+      "p95_success_ms": 13.62,
+      "p99_success_ms": 27.796
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-10-15T07:48:38.062+00:00",
+      "elapsed_s": 0.0,
+      "event": "replica_start_requested",
+      "desired": 1,
+      "observed": 0,
+      "slot": 1,
+      "reason": "initial_single_replica",
+      "port": 15121
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:39.068+00:00",
+      "elapsed_s": 1.006,
+      "event": "replica_healthy",
+      "desired": 1,
+      "observed": 1,
+      "slot": 1,
+      "reason": "initial_single_replica",
+      "port": 15121
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:39.069+00:00",
+      "elapsed_s": 1.007,
+      "event": "baseline_start",
+      "desired": 1,
+      "observed": 1,
+      "target_rps": 3
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:42.070+00:00",
+      "elapsed_s": 4.008,
+      "event": "demand_step_start",
+      "desired": 1,
+      "observed": 1,
+      "target_rps": 30
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:42.692+00:00",
+      "elapsed_s": 4.63,
+      "event": "scale_up_decision",
+      "desired": 2,
+      "observed": 1,
+      "rps_2sec": 11.5,
+      "threshold": 11
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:42.694+00:00",
+      "elapsed_s": 4.633,
+      "event": "replica_start_requested",
+      "desired": 2,
+      "observed": 1,
+      "slot": 2,
+      "reason": "automatic_scale_up",
+      "port": 15122
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:43.718+00:00",
+      "elapsed_s": 5.656,
+      "event": "replica_healthy",
+      "desired": 2,
+      "observed": 2,
+      "slot": 2,
+      "reason": "automatic_scale_up",
+      "port": 15122
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:50.071+00:00",
+      "elapsed_s": 12.01,
+      "event": "idle_window_start",
+      "desired": 2,
+      "observed": 2
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:54.171+00:00",
+      "elapsed_s": 16.109,
+      "event": "scale_down_decision",
+      "desired": 1,
+      "observed": 2,
+      "idle_s": 4.13
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:54.499+00:00",
+      "elapsed_s": 16.437,
+      "event": "replica_removed",
+      "desired": 1,
+      "observed": 1,
+      "slot": 2,
+      "reason": "automatic_scale_down"
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:55.577+00:00",
+      "elapsed_s": 17.515,
+      "event": "failure_trial_start",
+      "desired": 1,
+      "observed": 1,
+      "target_rps": 25
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:56.761+00:00",
+      "elapsed_s": 18.699,
+      "event": "scale_up_decision",
+      "desired": 2,
+      "observed": 1,
+      "rps_2sec": 15.0,
+      "threshold": 11
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:56.764+00:00",
+      "elapsed_s": 18.702,
+      "event": "replica_start_requested",
+      "desired": 2,
+      "observed": 1,
+      "slot": 2,
+      "reason": "automatic_scale_up",
+      "port": 15122
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:57.893+00:00",
+      "elapsed_s": 19.831,
+      "event": "replica_healthy",
+      "desired": 2,
+      "observed": 2,
+      "slot": 2,
+      "reason": "automatic_scale_up",
+      "port": 15122
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:58.297+00:00",
+      "elapsed_s": 20.236,
+      "event": "injected_replica_failure",
+      "desired": 2,
+      "observed": 2,
+      "victim": "lh6041-ha-931b639f-1"
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:58.344+00:00",
+      "elapsed_s": 20.283,
+      "event": "replica_detected_unhealthy",
+      "desired": 2,
+      "observed": 2,
+      "slot": 1
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:58.583+00:00",
+      "elapsed_s": 20.521,
+      "event": "replica_removed",
+      "desired": 2,
+      "observed": 1,
+      "slot": 1,
+      "reason": "unhealthy"
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:58.584+00:00",
+      "elapsed_s": 20.522,
+      "event": "replica_start_requested",
+      "desired": 2,
+      "observed": 1,
+      "slot": 1,
+      "reason": "automatic_replacement",
+      "port": 15121
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:48:59.668+00:00",
+      "elapsed_s": 21.606,
+      "event": "replica_healthy",
+      "desired": 2,
+      "observed": 2,
+      "slot": 1,
+      "reason": "automatic_replacement",
+      "port": 15121
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:49:04.081+00:00",
+      "elapsed_s": 26.019,
+      "event": "end_of_measurement",
+      "desired": 2,
+      "observed": 2,
+      "killed": "lh6041-ha-931b639f-1"
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:49:04.855+00:00",
+      "elapsed_s": 26.793,
+      "event": "replica_removed",
+      "desired": 2,
+      "observed": 1,
+      "slot": 1,
+      "reason": "experiment_cleanup"
+    },
+    {
+      "timestamp_utc": "2026-10-15T07:49:05.176+00:00",
+      "elapsed_s": 27.114,
+      "event": "replica_removed",
+      "desired": 2,
+      "observed": 0,
+      "slot": 2,
+      "reason": "experiment_cleanup"
+    }
+  ],
+  "unexpected_error": null,
+  "limitations": [
+    "All replicas run on one VM; VM outage still causes total service loss.",
+    "This is an isolated evaluation controller/proxy, not present in the currently deployed production stack.",
+    "Shared SQLite can bottleneck on multi-writer access; report observed HTTP failures without hiding them.",
+    "No managed cloud autoscaling group or multi-zone failover.",
+    "Load driver, proxy and replicas share the 2-vCPU VM."
+  ],
+  "autoscale_up_observed": true,
+  "autoscale_down_observed": true,
+  "failure_injected": true,
+  "automatic_recovery_observed": true,
+  "automatic_recovery_time_s": 1.37,
+  "surge_start_to_second_replica_healthy_s": 1.648,
+  "failover_window_first_2s": {
+    "requests": 50,
+    "success": 50,
+    "errors": 0,
+    "p95_success_ms": 26.939
+  },
+  "db_orders": 424,
+  "duplicate_order_ids": 0,
+  "missing_accepted_orders": 0
+}

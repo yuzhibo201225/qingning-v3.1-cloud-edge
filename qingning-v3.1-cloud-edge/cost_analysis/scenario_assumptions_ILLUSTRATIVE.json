@@ -1,0 +1,15 @@
+{
+  "vm_monthly_cny": 55.0,
+  "vm_sustainable_rps": 200,
+  "target_utilisation": 0.6,
+  "tenants": 1,
+  "orders_per_day": 100,
+  "requests_per_order": 3,
+  "storage_start_gb": 1,
+  "gb_added_per_1000_orders": 0.005,
+  "storage_cny_per_gb_month": 1.0,
+  "monitoring_monthly_cny": 5.0,
+  "ops_monthly_cny": 0.0,
+  "variable_cny_per_1000_requests": 0.01,
+  "assumptions_disclaimer": "Illustrative planning inputs, not provider invoice; server monthly price and demand must be replaced with actual bills. Single-tenant implementation; 10x and 100x are models, not measured deployed tenants."
+}

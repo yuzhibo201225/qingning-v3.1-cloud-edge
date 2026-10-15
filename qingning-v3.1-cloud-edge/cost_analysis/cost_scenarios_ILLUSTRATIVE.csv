@@ -1,0 +1,4 @@
+scale,tenants,orders_month,requests_month,mean_rps,vm_count,storage_gb,fixed_cny,variable_cny,total_cny,cny_per_tenant_month,cny_per_1000_requests,fixed_share_pct,evidence
+1x,1,3000,9000,0.003,1,1.015,60.0,1.1,61.11,61.105,6.789,98.19,"SCENARIO MODEL, NOT OBSERVED COST"
+10x,10,30000,90000,0.035,1,1.15,60.0,2.05,62.05,6.205,0.689,96.7,"SCENARIO MODEL, NOT OBSERVED COST"
+100x,100,300000,900000,0.347,1,2.5,60.0,11.5,71.5,0.715,0.079,83.92,"SCENARIO MODEL, NOT OBSERVED COST"
